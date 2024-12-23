@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import Footer from './Footer'
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -107,7 +107,7 @@ const Login = () => {
 
               <p className="text-sm !mt-8 text-center text-gray-800">
                 Don't have an account
-                <a href="javascript:void(0);" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">
+                <a href="/regsiter" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">
                   Register here
                 </a>
               </p>
@@ -122,6 +122,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

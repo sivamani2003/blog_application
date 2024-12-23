@@ -22,7 +22,7 @@ project-root/
 
 ## Frontend
 
-### Setup
+### Setup 
 1. Navigate to the `frontend` folder:
    ```bash
    cd frontend
@@ -36,10 +36,10 @@ project-root/
 ### Run the Frontend
 Run the following command to start the frontend:
 ```bash
-npm run
+npm run dev
 ```
 
-The frontend application should now be running locally (by default on [http://localhost:3000](http://localhost:3000), depending on your setup).
+The frontend application should now be running locally (by default on [http://localhost:5173](http://localhost:5173), depending on your setup).
 
 ---
 
@@ -62,7 +62,7 @@ Run the following command to start the backend server:
 npm start
 ```
 
-The backend server should now be running locally (by default on [http://localhost:5000](http://localhost:5000), depending on your setup).
+The backend server should now be running locally (by default on [http://localhost:5003](http://localhost:5003), depending on your setup).
 
 ---
 
@@ -75,7 +75,7 @@ The backend server should now be running locally (by default on [http://localhos
 ## Troubleshooting
 ### Common Issues
 1. **Port Conflicts**
-   If a port (3000 for frontend or 5000 for backend) is already in use, terminate the process or specify a new port.
+   If a port (5173 for frontend or 5003 for backend) is already in use, terminate the process or specify a new port.
    
 2. **Missing `.env` File**
    Make sure the `backend/.env` file contains the necessary environment variables if your backend depends on it.
