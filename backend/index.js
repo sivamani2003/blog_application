@@ -12,7 +12,7 @@ const app = express();
 // Middleware
 app.use(express.json()); // To parse JSON in request body
 app.use(cors({
-    origin: 'http://localhost:5173',  // Only allow requests from your frontend
+    origin: ['http://localhost:5173', 'https://blog-application-six-psi.vercel.app/'], // Only allow requests from your frontend
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true, // Allow credentials (cookies)
   })); // Allow cross-origin requests
