@@ -12,7 +12,7 @@ const Admin = () => {
   const fetchBlogs = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5003/api/blogs', {
+      const response = await axios.get('https://blog-application-i20m.onrender.com/api/blogs', {
         headers: { Authorization: `Bearer ${token}` },
       });
       // Sort blogs by 'createdAt' in descending order (latest first)
@@ -29,7 +29,7 @@ const Admin = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        'http://localhost:5003/api/blogs',
+        'https://blog-application-i20m.onrender.com/api/blogs',
         newBlog,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -49,7 +49,7 @@ const Admin = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        `http://localhost:5003/api/blogs/${editingBlog._id}`,
+        `https://blog-application-i20m.onrender.com/api/blogs/${editingBlog._id}`,
         editingBlog,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -66,7 +66,7 @@ const Admin = () => {
   const handleDeleteBlog = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5003/api/blogs/${id}`, {
+      await axios.delete(`https://blog-application-i20m.onrender.com/api/blogs/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setBlogs(blogs.filter((blog) => blog._id !== id));
