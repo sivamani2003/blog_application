@@ -11,11 +11,20 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // To parse JSON in request body
+const allowedOrigins = [
+  "https://blog-application-six-psi.vercel.app",
+  "http://localhost:3000"
+];
+
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://blog-application-six-psi.vercel.app/'], // Only allow requests from your frontend
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true, // Allow credentials (cookies)
-  })); // Allow cross-origin requests
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+}));
 
 // Routes
 app.use('/api/auth', authRoutes);
